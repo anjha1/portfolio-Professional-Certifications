@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Certifications</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --secondary: #14B8A6;
+            --text: #1F2937;
+            --bg: #FEF2F2;         /* Red-50 */
+            --card-bg: #FFFFFF;
+            --shadow: rgba(0,0,0,0.1);
+        }
+
+        [data-theme="dark"] {
+            --primary: #818CF8;
+            --secondary: #2DD4BF;
+            --text: #E5E7EB;
+            --bg: #1F2937;
+            --card-bg: #374151;
+            --shadow: rgba(255,255,255,0.1);
+        }
+       
+
+
+/* Modify header gradient */
+.header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+/* Update badge hover states */
+.badge:hover {
+    background: #B91C1C;
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .header {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            gap: 1rem;
+        }
+
+        .search-filter {
+            flex: 1;
+            max-width: 400px;
+            padding: 0.75rem;
+            border-radius: 50px;
+            border: 1px solid var(--shadow);
+            background: var(--card-bg);
+            color: var(--text);
+        }
+
+        .certificate-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .certificate-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px var(--shadow);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+
+        .certificate-details h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .certificate-viewer {
+            background: var(--bg);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+
+        .certificate-actions {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .badge:hover {
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+            
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            padding: 1rem;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px var(--shadow);
+        }
+
+        @media (max-width: 768px) {
+            .certificate-card {
+                grid-template-columns: 1fr;
+            }
+            
+            .certificate-viewer {
+                order: -1;
+                height: 200px;
+            }
+            
+            .pdf-viewer {
+                height: 200px;
+            }
+        }
+            .certificate-viewer {
+                position: relative;
+                padding-bottom: 56.25%; /* 16:9 aspect ratio */
+                height: 0;
+                overflow: hidden;
+                    }
+                
+                .pdf-viewer {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 117.65%;
+                height: 117.65%;
+                border: 0;
+                transform: scale(0.85);
+                transform-origin: 0 0;
+                }
+    
+    </style>
+
+</head>
+<body>
+    <header class="header" data-aos="fade-down">
+        <h1>Professional Certifications</h1>
+        <p>Validated skills and achievements</p>
+    </header>
+
+    <div class="container">
+        <div class="controls">
+            <input type="text" class="search-filter" placeholder="Search by skill, issuer, or year...">
+            <button class="badge" id="themeToggle">
+                <i class="fas fa-moon"></i> Dark Mode
+            </button>
+        </div>
+
+        <section class="certificate-grid">
+            <!-- PW Skills -->
+            <div class="certificate-card" data-aos="fade-up">
+                <div class="certificate-details">
+                    <h3>PW Skills - Full Stack Development</h3>
+                    <p><strong>Issuer:</strong> PW Skills</p>
+                    <p><strong>Date Earned:</strong> January 2023</p>
+                    <div class="skill-tags">
+                        <span class="skill">MERN Stack</span>
+                        <span class="skill">MongoDB</span>
+                        <span class="skill">Express.js</span>
+                        <span class="skill">React</span>
+                        <span class="skill">Node.js</span>
+                    </div>
+                    <div class="certificate-actions">
+                        <a href="https://pwskills.com/learn/certificate/3aacde44-7abe-4672-bb7c-681024e01ace/" 
+                           class="badge" 
+                           target="_blank"
+                           aria-label="Verify PW Skills Certificate">
+                           <i class="fas fa-external-link-alt"></i> Verify
+                        </a>
+                        <a href="/certificates/pw-skills.pdf" 
+                           class="badge" 
+                           download
+                           aria-label="Download PW Skills Certificate">
+                           <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="certificate-viewer">
+                    <iframe class="pdf-viewer" 
+                            src="https://drive.google.com/file/d/1h0VDFqm-38y--arRhRoJl_NArSVxD7kA/preview#view=fitH"
+                            title="PW Skills Certificate Preview"
+                            loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        
+            <!-- IBM Cognitive Class -->
+            <div class="certificate-card" data-aos="fade-up">
+                <div class="certificate-details">
+                    <h3>IBM Cognitive Class - Data Science</h3>
+                    <p><strong>Issuer:</strong> IBM</p>
+                    <p><strong>Date Earned:</strong> March 2023</p>
+                    <div class="skill-tags">
+                        <span class="skill">Data Analysis</span>
+                        <span class="skill">Python</span>
+                        <span class="skill">Pandas</span>
+                        <span class="skill">NumPy</span>
+                    </div>
+                    <div class="certificate-actions">
+                        <a href="https://courses.cognitiveclass.ai/certificates/4e4ffad2848949eca6a8dcb507104a66" 
+                           class="badge" 
+                           target="_blank"
+                           aria-label="Verify IBM Certificate">
+                           <i class="fas fa-external-link-alt"></i> Verify
+                        </a>
+                        <a href="/certificates/ibm-data-science.pdf" 
+                           class="badge" 
+                           download
+                           aria-label="Download IBM Certificate">
+                           <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+                <div class="certificate-viewer">
+                    <iframe class="pdf-viewer" 
+                            src="https://drive.google.com/file/d/1-hTcOIqYAUULoVrdgrdajhGZGUYSXlze/preview#view=fitH"
+                            title="IBM Data Science Certificate Preview"
+                            loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        
+            <!-- Udacity Nanodegree -->
+            <div class="certificate-card" data-aos="fade-up">
+                <div class="certificate-details">
+                    <h3>Udacity - Cloud Computing Nanodegree</h3>
+                    <p><strong>Issuer:</strong> Udacity</p>
+                    <p><strong>Date Earned:</strong> June 2023</p>
+                    <div class="skill-tags">
+                        <span class="skill">AWS</span>
+                        <span class="skill">Cloud Architecture</span>
+                        <span class="skill">Docker</span>
+                    </div>
+                    <div class="certificate-actions">
+                        <a href="https://www.udacity.com/certificate/e/ddc4e57a-0b33-11ef-b3b0-0b037de8f045" 
+                           class="badge" 
+                           target="_blank"
+                           aria-label="Verify Udacity Certificate">
+                           <i class="fas fa-external-link-alt"></i> Verify
+                        </a>
+                        <a href="/certificates/udacity-cloud.pdf" 
+                           class="badge" 
+                           download
+                           aria-label="Download Udacity Certificate">
+                           <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+                <div class="certificate-viewer">
+                    <iframe class="pdf-viewer" 
+                            src="https://www.udacity.com/certificate/e/ddc4e57a-0b33-11ef-b3b0-0b037de8f045"
+                            title="Udacity Cloud Certificate Preview"
+                            loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        
+            <!-- Continue with remaining certificates using same pattern -->
+            
+            <!-- Coursera - Introduction to Data Science -->
+            <div class="certificate-card" data-aos="fade-up">
+                <div class="certificate-details">
+                    <h3>Coursera - Introduction to Data Science</h3>
+                    <p><strong>Issuer:</strong> Coursera</p>
+                    <p><strong>Date Earned:</strong> May 2023</p>
+                    <div class="skill-tags">
+                        <span class="skill">Data Science</span>
+                        <span class="skill">Python</span>
+                        <span class="skill">Jupyter Notebooks</span>
+                    </div>
+                    <div class="certificate-actions">
+                        <a href="https://www.coursera.org/account/accomplishments/verify/V4SCBAAWTHNX" 
+                           class="badge" 
+                           target="_blank"
+                           aria-label="Verify Coursera Certificate">
+                           <i class="fas fa-external-link-alt"></i> Verify
+                        </a>
+                        <a href="/certificates/coursera-data-science.pdf" 
+                           class="badge" 
+                           download
+                           aria-label="Download Coursera Certificate">
+                           <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+                <div class="certificate-viewer">
+                    <iframe class="pdf-viewer" 
+                            src="https://www.coursera.org/account/accomplishments/verify/V4SCBAAWTHNX"
+                            title="Coursera Data Science Preview"
+                            loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        
+            <!-- IBM SkillsBuild - Essentials -->
+            <div class="certificate-card" data-aos="fade-up">
+                <div class="certificate-details">
+                    <h3>IBM SkillsBuild - Essentials</h3>
+                    <p><strong>Issuer:</strong> IBM SkillsBuild</p>
+                    <p><strong>Date Earned:</strong> April 2024</p>
+                    <div class="skill-tags">
+                        <span class="skill">Cloud Computing</span>
+                        <span class="skill">AI</span>
+                        <span class="skill">Data Science</span>
+                    </div>
+                    <div class="certificate-actions">
+                        <a href="https://courses.skillsbuild.skillsnetwork.site/certificates/91afed0ba0ac44edb1ca9794dcd0ba7f" 
+                           class="badge" 
+                           target="_blank"
+                           aria-label="Verify IBM SkillsBuild Certificate">
+                           <i class="fas fa-external-link-alt"></i> Verify
+                        </a>
+                        <a href="/certificates/ibm-skillsbuild.pdf" 
+                           class="badge" 
+                           download
+                           aria-label="Download IBM SkillsBuild Certificate">
+                           <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+                <div class="certificate-viewer">
+                    <iframe class="pdf-viewer" 
+                            src="https://courses.skillsbuild.skillsnetwork.site/certificates/91afed0ba0ac44edb1ca9794dcd0ba7f"
+                            title="IBM SkillsBuild Certificate Preview"
+                            loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        
+            <!-- Add remaining certificates following the same structure -->
+            <!-- ... (GUVI, Coursera, and other certificates) ... -->
+        
+        </section>
+    </div>
+
+    <button class="theme-toggle" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.dataset.theme = 
+                document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+            themeToggle.innerHTML = document.body.dataset.theme === 'dark' 
+                ? '<i class="fas fa-sun"></i> Light Mode' 
+                : '<i class="fas fa-moon"></i> Dark Mode';
+        });
+
+        // Search filter
+        const searchFilter = document.querySelector('.search-filter');
+        searchFilter.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            document.querySelectorAll('.certificate-card').forEach(card => {
+                const text = card.textContent.toLowerCase();
+                card.style.display = text.includes(searchTerm) ? 'grid' : 'none';
+            });
+        });
+
+        // Back to top
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.style.display = window.scrollY > 500 ? 'block' : 'none';
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
