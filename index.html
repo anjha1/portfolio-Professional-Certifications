@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Certifications</title>
@@ -8,6 +9,147 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:  #e9cfb7ab;;
+            color: #333;
+        }
+
+        header {
+            background-color: black;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color:  #d18e413b;;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .experience-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            /* display: grid; */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .experience-item {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow:  0 4px 40px rgb(8, 254, 69);;
+            flex: 1;
+            min-width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        
+            .experience-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(255, 0, 0, 3);
+            border: 2px solid rgba(15, 25, 230, 3); 
+            border-radius: 8px; 
+        }
+
+        
+
+        .experience-item h2 {
+            color: #7105e4;
+            margin-top: 0;
+        }
+        .experience-item p {
+            line-height: 1.6;
+        }
+
+        .experience-item ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .experience-item ul li {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .experience-item {
+                min-width: 100%;
+            }
+        }
+        .experience-item a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 5px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .experience-item a:hover {
+            background-color: #cd10bafc;
+        }
+        .cta-section {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #333;
+            color: #fff;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .cta-section h2 {
+            margin-top: 0;
+        }
+
+        .cta-section a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #1197cd;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .cta-section a:hover {
+            background-color: #29a8cf;
+        }
         :root {
             --primary: #4F46E5;
             --secondary: #14B8A6;
@@ -196,6 +338,15 @@
 </head>
 <body>
     <header class="header" data-aos="fade-down">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="https://anjha1.github.io/portfolio-Home/">Home</a></li>
+                    <li><a href="https://anjha1.github.io/portfolio-Projects/">Project</a></li>
+                    <li><a href="https://anjha1.github.io/portfolio-Contact/">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
         <h1>Professional Certifications</h1>
         <p>Validated skills and achievements</p>
     </header>
